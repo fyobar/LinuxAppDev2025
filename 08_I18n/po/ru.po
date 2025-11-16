@@ -1,0 +1,52 @@
+# Russian translations for  08_I18n package.
+# Copyright (C) 2025 THE  08_I18n'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the  08_I18n package.
+# theo <theo@localhost>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  08_I18n\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-16 21:36+0300\n"
+"PO-Revision-Date: 2025-11-16 19:36+0300\n"
+"Last-Translator: theo <theo@localhost>\n"
+"Language-Team: Russian <gnu@d07.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/guesser.c:22
+#, c-format
+msgid "Choose a random number between 1 and 100.\n"
+msgstr "Выберите число от 1 до 100.\n"
+
+#: src/guesser.c:26
+#, c-format
+msgid "Is the number greater than %d? (Yes/No): "
+msgstr "Выбранное число больше, чем %d? (Yes/No): "
+
+#: src/guesser.c:29
+#, c-format
+msgid "Error: failed to read input.\n"
+msgstr "Ошибка: проблемы с обработкой пользовательского ввода.\n"
+
+#: src/guesser.c:35
+msgid "Yes"
+msgstr "Yes"
+
+#: src/guesser.c:37
+msgid "No"
+msgstr "No"
+
+#: src/guesser.c:40
+#, c-format
+msgid "Invalid input. Please type exactly 'Yes' or 'No'.\n"
+msgstr "Неверный ответ. Введите строго 'Yes' или 'No'.\n"
+
+#: src/guesser.c:46
+#, c-format
+msgid "The number is %d!\n"
+msgstr "Выбранное число — %d!\n"
