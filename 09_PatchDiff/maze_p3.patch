@@ -1,0 +1,58 @@
+--- maze_dynamic_custom.c	2025-11-27 23:06:35
++++ maze_dynamic_custom_seeded.c	2025-11-27 23:07:58
+@@ -1,6 +1,5 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <time.h>
+ #include <string.h>
+ 
+ int N;
+@@ -68,7 +67,6 @@
+     }
+ }
+ 
+-
+ void show() {
+     for (int i = 0; i < SIZE; i++) {
+         for (int j = 0; j < SIZE; j++) {
+@@ -80,21 +78,24 @@
+ 
+ 
+ int main(int argc, char *argv[]) {
+-    if (argc < 3) {
+-        printf("Usage: %s <pass+wall chars> <maze_size>\n", argv[0]);
+-        printf("Example: %s .# 6\n", argv[0]);
++    if (argc < 4) {
++        printf("Usage: %s <seed> <pass+wall chars> <maze_size>\n", argv[0]);
++        printf("Example: %s 42 . # 6\n", argv[0]);
+         return 1;
+     }
+ 
+-    if (strlen(argv[1]) != 2) {
++    int seed = atoi(argv[1]);
++    srand(seed);
++
++    if (strlen(argv[2]) != 2) {
+         printf("First argument must be exactly 2 characters: pass and wall.\n");
+         return 1;
+     }
+ 
+-    PASS = argv[1][0];
+-    WALL = argv[1][1];
++    PASS= argv[2][0];
++    WALL = argv[2][1];
+ 
+-    N = atoi(argv[2]);
++    N = atoi(argv[3]);
+ 
+     if (N <= 0) {
+         printf("Maze size must be a positive integer.\n");
+@@ -103,8 +104,6 @@
+ 
+     SIZE = 2 * N + 1;
+ 
+-    srand(time(NULL));
+-
+     allocate_maze();
+     init_maze();
+ 

@@ -1,0 +1,81 @@
+--- maze.c	2025-11-27 23:00:27
++++ maze_dynamic.c	2025-11-27 23:04:18
+@@ -2,15 +2,28 @@
+ #include <stdlib.h>
+ #include <time.h>
+ 
+-#define N 6
+-#define SIZE (2*N + 1)
++int N;
++int SIZE;
+ 
+-char maze[SIZE][SIZE];
++char **maze;
+ 
+ int dx[] = {-1, 0, 1, 0};
+ int dy[] = {0, 1, 0, -1};
+ 
+ 
++void allocate_maze() {
++    maze = (char **)malloc(SIZE * sizeof(char *));
++    for (int i = 0; i < SIZE; i++) {
++        maze[i] = (char *)malloc(SIZE * sizeof(char));
++    }
++}
++
++void free_maze() {
++    for (int i = 0; i < SIZE; i++)
++        free(maze[i]);
++    free(maze);
++}
++
+ void init_maze() {
+     for (int i = 0; i < SIZE; i++) {
+         for (int j = 0; j < SIZE; j++) {
+@@ -32,6 +45,7 @@
+     }
+ }
+ 
++
+ void carve(int x, int y, int visited[N][N]) {
+     visited[x][y] = 1;
+ 
+@@ -62,15 +76,36 @@
+ }
+ 
+ 
+-int main() {
++int main(int argc, char *argv[]) {
++    if (argc < 2) {
++        printf("Usage: %s <maze_size>\n", argv[0]);
++        return 1;
++    }
++
++    N = atoi(argv[1]);
++
++    if (N <= 0) {
++        printf("Maze size must be a positive integer.\n");
++        return 1;
++    }
++
++    SIZE = 2 * N + 1;
++
+     srand(time(NULL));
+ 
++    allocate_maze();
+     init_maze();
+ 
+-    int visited[N][N] = {0};
++    int visited[N][N];
++    for (int i = 0; i < N; i++)
++        for (int j = 0; j < N; j++)
++            visited[i][j] = 0;
+ 
+     carve(0, 0, visited);
+     show();
+ 
++    free_maze();
++
+     return 0;
+ }
++

@@ -1,0 +1,81 @@
+--- maze_dynamic.c	2025-11-27 23:04:18
++++ maze_dynamic_custom.c	2025-11-27 23:06:35
+@@ -1,11 +1,14 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <time.h>
++#include <string.h>
+ 
+ int N;
+ int SIZE;
+ 
+ char **maze;
++char PASS = '.';
++char WALL = '#';
+ 
+ int dx[] = {-1, 0, 1, 0};
+ int dy[] = {0, 1, 0, -1};
+@@ -27,7 +30,7 @@
+ void init_maze() {
+     for (int i = 0; i < SIZE; i++) {
+         for (int j = 0; j < SIZE; j++) {
+-            maze[i][j] = (i % 2 == 0 || j % 2 == 0) ? '#' : '.';
++            maze[i][j] = (i % 2 == 0 || j % 2 == 0) ? WALL : PASS;
+         }
+     }
+ }
+@@ -45,7 +48,6 @@
+     }
+ }
+ 
+-
+ void carve(int x, int y, int visited[N][N]) {
+     visited[x][y] = 1;
+ 
+@@ -59,13 +61,14 @@
+         if (valid(nx, ny) && !visited[nx][ny]) {
+             int wallX = 2 * x + 1 + dx[dirs[i]];
+             int wallY = 2 * y + 1 + dy[dirs[i]];
+-            maze[wallX][wallY] = '.';
++            maze[wallX][wallY] = PASS;
+ 
+             carve(nx, ny, visited);
+         }
+     }
+ }
+ 
++
+ void show() {
+     for (int i = 0; i < SIZE; i++) {
+         for (int j = 0; j < SIZE; j++) {
+@@ -77,13 +80,22 @@
+ 
+ 
+ int main(int argc, char *argv[]) {
+-    if (argc < 2) {
+-        printf("Usage: %s <maze_size>\n", argv[0]);
++    if (argc < 3) {
++        printf("Usage: %s <pass+wall chars> <maze_size>\n", argv[0]);
++        printf("Example: %s .# 6\n", argv[0]);
+         return 1;
+     }
+ 
+-    N = atoi(argv[1]);
++    if (strlen(argv[1]) != 2) {
++        printf("First argument must be exactly 2 characters: pass and wall.\n");
++        return 1;
++    }
+ 
++    PASS = argv[1][0];
++    WALL = argv[1][1];
++
++    N = atoi(argv[2]);
++
+     if (N <= 0) {
+         printf("Maze size must be a positive integer.\n");
+         return 1;
+@@ -108,4 +120,3 @@
+ 
+     return 0;
+ }
+-
