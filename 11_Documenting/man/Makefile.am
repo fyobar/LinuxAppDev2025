@@ -1,0 +1,1 @@
+man_MANS = guesser.1

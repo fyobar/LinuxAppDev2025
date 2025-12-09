@@ -1,0 +1,13 @@
+PROJECT_NAME = "Guesser"
+PROJECT_BRIEF = "Number guessing game"
+CREATE_SUBDIRS = NO
+GENERATE_LATEX = NO
+EXTRACT_ALL = YES
+FILE_PATTERNS = *.c *.h *.dox *.txt
+RECURSIVE = NO
+QUIET = NO
+GENERATE_HTML = YES
+HTML_OUTPUT = html
+INPUT = @top_srcdir@/doc @top_srcdir@/src
+EXAMPLE_PATH = @top_srcdir@/doc
+OUTPUT_DIRECTORY = @top_srcdir@/doc_build

@@ -1,0 +1,14 @@
+/*! \mainpage Guesser Program Documentation
+ *
+ * \section intro_sec Introduction
+ *
+ * Welcome to the **Guesser** program documentation.
+ * This is a simple number guessing game written in C.
+ *
+ * \section help_sec Program Help
+ *
+ * The following help text is generated automatically from the program's `--help` output:
+ *
+ * \verbinclude help_generated.txt
+ *
+ */
