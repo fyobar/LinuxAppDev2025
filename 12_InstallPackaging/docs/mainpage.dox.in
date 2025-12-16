@@ -1,0 +1,40 @@
+/**
+ * @mainpage SLOT MACHINE
+ *
+ *
+ * @section intro Introduction
+ * This is a simple terminal-based Slot Machine game written in C.
+ * It uses ASCII art for the reels and supports multiple fruits symbols.
+ *
+ * The program features:
+ * - Input validation
+ * - Quit option by pressing 'q'
+ * - Independent reel spinning animation
+ * - Payout calculation with single or double matches
+ *
+ * @section install Installation
+ * Build the project with autotools:
+ * @code
+ * ./configure
+ * make
+ * make check
+ * make install
+ * @endcode
+ *
+ * @section usage Usage
+ * Run the slot machine:
+ * @code
+ * slot_machine
+ * @endcode
+ *
+ * Enter your bet or press 'q' to quit. The program displays credits,
+ * reels, and payout results in a nicely formatted console interface.
+ *
+ * @section docs Documentation
+ * This documentation is generated using Doxygen. It includes:
+ * - Source code documentation
+ * - Functions descriptions
+ * - Constants and macros
+ * - Example usage
+ *
+ */

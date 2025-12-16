@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slot_machine 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+
+msgid "Slot Machine Game\n"
+msgstr "Игровой автомат\n"
+
+msgid "\nUsage: slot_machine [options]\n\n"
+msgstr "\nИспользование: slot_machine [параметры]\n\n"
+
+msgid "Options:\n"
+msgstr "Параметры:\n"
+
+msgid "  -h, --help    Show this help message and exit\n\n"
+msgstr "  -h, --help    Показать это справочное сообщение и выйти\n\n"
+
+msgid "Gameplay:\n"
+msgstr "Игровой процесс:\n"
+
+msgid "  Enter your bet (1 to your current credits) to spin the reels.\n"
+msgstr "  Введите вашу ставку (от 1 до текущего количества кредитов), чтобы запустить барабаны.\n"
+
+msgid "  Enter 'q' to quit the game.\n"
+msgstr "  Введите «q», чтобы выйти из игры.\n"
+
+msgid "  Three matching symbols: win 5× bet\n"
+msgstr "  Три совпадающих символа: выигрыш 5× от ставки\n"
+
+msgid "  Two matching symbols: win 2× bet\n"
+msgstr "  Два совпадающих символа: выигрыш 2× от ставки\n"
+
+msgid "  No match: lose your bet\n"
+msgstr "  Нет совпадений: вы проигрываете ставку\n"
+
+msgid "\nEnter your bet (or 'q' to quit): "
+msgstr "\nВведите вашу ставку (или «q» для выхода): "
+
+
+msgid "SLOT MACHINE"
+msgstr "ИГРОВОЙ АВТОМАТ"
+
+msgid "Credits: "
+msgstr "Баланс: "
+
+msgid "Current bet: "
+msgstr "Ставка: "
+
+msgid "Spin!"
+msgstr "Крутить!"
+
+msgid "You are out of credits. Game over."
+msgstr "У вас закончились средства. Игра окончена."
+
+msgid "Enter your bet (0 to quit): "
+msgstr "Введите вашу ставку (0 для выхода): "
+
+msgid "Thanks for playing."
+msgstr "Спасибо за игру."
+
+msgid "Invalid bet."
+msgstr "Неверная ставка."
+
+msgid "JACKPOT! You win %d credits."
+msgstr "ДЖЕКПОТ! Вы выиграли %d кредитов."
+
+msgid "Two matched! You win %d credits."
+msgstr "Две одинаковые! Вы выиграли %d."
+
+msgid "No match. You lose %d credits."
+msgstr "Нет совпадений. Вы проиграли %d."
+
+msgid "Invalid input. Please enter a number or 'q'."
+msgstr "Неверный ввод. Пожалуйста, введите число или 'q'."
+
+msgid "Invalid bet. Must be between 1 and %d."
+msgstr "Неверная ставка. Должна быть между 1 и %d."
+
+msgid "Press Enter to continue..."
+msgstr "Нажмите Enter, чтобы продолжить..."
+

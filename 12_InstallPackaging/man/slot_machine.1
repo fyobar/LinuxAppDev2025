@@ -1,0 +1,59 @@
+.\" Manpage for slot_machine
+.TH SLOT_MACHINE 1 "2025-12-15" "1.0" "Slot Machine Game"
+.SH NAME
+slot_machine \- text-based slot machine game
+
+.SH SYNOPSIS
+.B slot_machine
+[\-h]
+
+.SH DESCRIPTION
+.B slot_machine
+is a terminal-based slot machine game written in C. The player starts with a fixed number of credits
+and can place bets to spin the reels. Matching symbols increase credits according to the payout rules.
+
+The game supports UTF-8 symbols for reels and displays a simple 3x3 reel matrix.
+
+.SH OPTIONS
+.TP
+\-h, --help
+Show help message and exit.
+
+.SH GAMEPLAY
+After launching the game:
+
+.RS
+.IP
+You are prompted to enter a bet amount.  
+.IP
+Enter a numeric value between 1 and your current credits, or 'q' to quit.  
+.IP
+The reels will spin and display the outcome.  
+.IP
+Payout rules:
+.RS
+.IP
+Three matching symbols: win 5× bet
+.IP
+Two matching symbols: win 2× bet
+.IP
+No match: lose the bet
+.RE
+.IP
+Press Enter to continue after each spin.
+.RE
+
+.SH CREDITS
+You start with 100 credits.
+
+.SH EXAMPLES
+To start the game:
+
+.EX
+$ ./slot_machine
+.EX
+
+.SH FILES
+.PP
+The program uses gettext PO files for localization in the ./po directory.
+

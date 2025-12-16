@@ -1,0 +1,11 @@
+PROJECT_NAME           = "@PACKAGE_NAME@"
+PROJECT_BRIEF          = "Terminal-based Slot Machine"
+OUTPUT_DIRECTORY       = docs
+INPUT = @srcdir@/docs/mainpage.dox @srcdir@/src
+FILE_PATTERNS          = *.c *.h *.dox
+RECURSIVE              = YES
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+EXTRACT_ALL            = YES
+QUIET                  = NO
+WARNINGS               = YES
